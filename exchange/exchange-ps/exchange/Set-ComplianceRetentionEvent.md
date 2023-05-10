@@ -1,39 +1,63 @@
 ---
 external help file: Microsoft.Exchange.TransportMailflow-Help.xml
-online version: https://learn.microsoft.com/powershell/module/exchange/new-complianceretentionevent
+online version: https://learn.microsoft.com/powershell/module/exchange/set-complianceretentionevent
 applicable: Security & Compliance
-title: New-ComplianceRetentionEvent
+title: Set-ComplianceRetentionEvent
 schema: 2.0.0
 author: chrisda
 ms.author: chrisda
 ms.reviewer:
 ---
 
-# New-ComplianceRetentionEvent
+# Set-ComplianceRetentionEvent
 
 ## SYNOPSIS
 This cmdlet is available only in Security & Compliance PowerShell. For more information, see [Security & Compliance PowerShell](https://learn.microsoft.com/powershell/exchange/scc-powershell).
 
-Use the New-ComplianceRetentionEvent cmdlet to create compliance retention events in your organization.
-
-For information about the parameter sets in the Syntax section below, see [Exchange cmdlet syntax](https://learn.microsoft.com/powershell/exchange/exchange-cmdlet-syntax).
+Use the Set-ComplianceRetentionEvent cmdlet to modify compliance retention events in the Microsoft Purview compliance portal.
 
 ## SYNTAX
 
+### Identity
 ```
-New-ComplianceRetentionEvent -Name <String>
+Set-ComplianceRetentionEvent [-Identity] <PolicyIdParameter> -Action <SearchJobType>
  [-AssetId <String>]
  [-Comment <String>]
  [-Confirm]
  [-DomainController <Fqdn>]
- [-EventDateTime <DateTime>]
  [-EventTags <MultiValuedProperty>]
  [-EventType <ComplianceRuleIdParameter>]
  [-ExchangeAssetIdQuery <String>]
- [-PreviewOnly]
  [-SharePointAssetIdQuery <String>]
- [-WhatIf]
- [<CommonParameters>]
+ [-WhatIf] [<CommonParameters>]
+```
+
+### AdaptiveScopeLocation
+```
+Set-ComplianceRetentionEvent [-Identity] <PolicyIdParameter> -Action <SearchJobType>
+ [-AssetId <String>]
+ [-Comment <String>]
+ [-Confirm]
+ [-DomainController <Fqdn>]
+ [-EventTags <MultiValuedProperty>]
+ [-EventType <ComplianceRuleIdParameter>]
+ [-ExchangeAssetIdQuery <String>]
+ [-SharePointAssetIdQuery <String>]
+ [-WhatIf] [<CommonParameters>]
+```
+
+### TeamLocation
+```
+Set-ComplianceRetentionEvent [-Identity] <PolicyIdParameter> -Action <SearchJobType>
+ [-AssetId <String>]
+ [-Comment <String>]
+ [-Confirm]
+ [-DomainController <Fqdn>]
+ [-EventTags <MultiValuedProperty>]
+ [-EventType <ComplianceRuleIdParameter>]
+ [-ExchangeAssetIdQuery <String>]
+ [-SharePointAssetIdQuery <String>]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -43,28 +67,45 @@ To use this cmdlet in Security & Compliance PowerShell, you need to be assigned 
 
 ### Example 1
 ```powershell
-New-ComplianceRetentionEvent -Name "Research Project Employees" -EventTag 80e0d620-13ea-4ed9-b6a6-aa883278bcca -EventType e823b782-9a07-4e30-8091-034fc01f9347 -SharePointAssetIDQuery "EmployeeNumber:123456 EmployeeNumber:456789"
+{{ Add example code here }}
 ```
 
-This example creates a compliance retention event named Research Project Employees with the following settings:
-
-- EventTag: 80e0d620-13ea-4ed9-b6a6-aa883278bcca
-- EventTpe: e823b782-9a07-4e30-8091-034fc01f9347
-- SharePointAssetIDQuery: EmployeeNumber:123456 EmployeeNumber:456789
+{{ Add example description here }}
 
 ## PARAMETERS
 
-### -Name
-The Name parameter specifies a unique name for the compliance retention event. The maximum length is 64 characters. If the value contains spaces, enclose the value in quotation marks (").
+### -Identity
+The Identity parameter specifies the compliance retention event that you want to modify. You can use any value that uniquely identifies the event. For example:
+
+- Name
+- Distinguished name (DN)
+- GUID
 
 ```yaml
-Type: String
+Type: PolicyIdParameter
 Parameter Sets: (All)
 Aliases:
 Applicable: Security & Compliance
 
 Required: True
-Position: 1
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -Action
+{{ Fill Action Description }}
+
+```yaml
+Type: SearchJobType
+Parameter Sets: (All)
+Aliases:
+Accepted values: Search, Report
+Applicable: Security & Compliance
+
+Required: True
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -91,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -Comment
-The Comment parameter specifies an optional comment. If you specify a value that contains spaces, enclose the value in quotation marks ("), for example: "This is an admin note".
+The Comment parameter specifies an optional comment. If the value contains spaces, enclose the value in quotation marks (").
 
 ```yaml
 Type: String
@@ -130,24 +171,6 @@ This parameter is reserved for internal Microsoft use.
 
 ```yaml
 Type: Fqdn
-Parameter Sets: (All)
-Aliases:
-Applicable: Security & Compliance
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -EventDateTime
-The EventDateTime parameter specifies the date-time of the event.
-
-Use the short date format that's defined in the Regional Options settings on the computer where you're running the command. For example, if the computer is configured to use the short date format mm/dd/yyyy, enter 09/01/2018 to specify September 1, 2018. You can enter the date only, or you can enter the date and time of day. If you enter the date and time of day, enclose the value in quotation marks ("), for example, "09/01/2018 5:00 PM".
-
-```yaml
-Type: DateTime
 Parameter Sets: (All)
 Aliases:
 Applicable: Security & Compliance
@@ -198,22 +221,6 @@ The ExchangeAssetIdQuery parameter specifies the keywords that are used to scope
 
 ```yaml
 Type: String
-Parameter Sets: (All)
-Aliases:
-Applicable: Security & Compliance
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PreviewOnly
-{{ Fill PreviewOnly Description }}
-
-```yaml
-Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 Applicable: Security & Compliance

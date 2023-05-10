@@ -2200,6 +2200,8 @@ Exchange PowerShell is built on Windows PowerShell technology and provides a pow
 
 ### [Remove-AppRetentionComplianceRule](Remove-AppRetentionComplianceRule.md)
 
+### [Remove-ComplianceRetentionEvent](Remove-ComplianceRetentionEvent.md)
+
 ### [Remove-ComplianceRetentionEventType](Remove-ComplianceRetentionEventType.md)
 
 ### [Remove-ComplianceTag](Remove-ComplianceTag.md)
@@ -2239,6 +2241,8 @@ Exchange PowerShell is built on Windows PowerShell technology and provides a pow
 ### [Set-AppRetentionCompliancePolicy](Set-AppRetentionCompliancePolicy.md)
 
 ### [Set-AppRetentionComplianceRule](Set-AppRetentionComplianceRule.md)
+
+### [Set-ComplianceRetentionEvent](Set-ComplianceRetentionEvent.md)
 
 ### [Set-ComplianceRetentionEventType](Set-ComplianceRetentionEventType.md)
 
